@@ -512,7 +512,7 @@ static void addLocal(Token name) {
 }
 //< Local Variables add-local
 //> Local Variables declare-variable
-static void declareVariable() {
+static void declareVariable(bool isMutable) {
   if (current->scopeDepth == 0) return;
 
   Token* name = &parser.previous;
@@ -529,7 +529,7 @@ static void declareVariable() {
   }
 
 //< existing-in-scope
-  addLocal(*name);
+  addLocal(parser.previous, isMutable);
 }
 //< Local Variables declare-variable
 //> Global Variables parse-variable
