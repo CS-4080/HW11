@@ -508,6 +508,7 @@ static void addLocal(Token name) {
 //> Closures init-is-captured
   local->isCaptured = false;
 //< Closures init-is-captured
+  local->isMutable = isMutable;
 }
 //< Local Variables add-local
 //> Local Variables declare-variable
